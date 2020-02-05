@@ -13,15 +13,14 @@ ledOn = False
 
 while True:
   val = adc.read()
-  if val < 40:
+  if val < 250:
     ledOn = True
   else:
     ledOn = False
-  #print(lastledOn)
+
   if ledOn != lastledOn:
     if ledOn == True:
       single_colour(255, 0, 255, 5)
     else:
       single_colour(0, 255, 255, 5)
     lastledOn = ledOn
-sleep(1)
